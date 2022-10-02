@@ -1,0 +1,635 @@
+@use "variable";
+@forward "variable";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+body,
+html {
+	padding: 0;
+	margin: 0;
+	font-family: "Montserrat", sans-serif;
+	scroll-behavior: smooth;
+	line-height: 1.5;
+	box-sizing: border-box;
+	overflow-x: hidden;
+
+	background-color: variable.$black;
+	@media screen and (max-width: variable.$widthLimit) {
+		scroll-snap-type: y proximity;
+	}
+}
+
+.steamLogo {
+	display: inline-block;
+	vertical-align: middle;
+	width: 1em;
+	aspect-ratio: 1;
+	background-image: url(variable.$IMG-ROOT + "Logo/Steam.png");
+	background-position: center;
+	background-size: contain;
+
+	margin-block: auto;
+}
+
+.metaLogo {
+	display: inline-block;
+	vertical-align: middle;
+	width: 1em;
+	aspect-ratio: 1;
+	background-image: url(variable.$IMG-ROOT + "media/Meta.png");
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+
+	margin-block: auto;
+}
+
+.phone-only {
+	@media screen and (min-width: variable.$widthLimit) {
+		display: none !important;
+	}
+}
+
+.Button {
+	display: block;
+
+	border-radius: 0.5rem;
+	padding: calc(variable.$padding/2) variable.$padding;
+
+	text-decoration: none;
+	text-align: center;
+	width: fit-content;
+
+	overflow: hidden;
+
+	transition: all 0.1s ease-in-out;
+
+	position: relative;
+	font-size: medium;
+	font-weight: 600;
+
+	background-color: variable.$main;
+	color: white;
+
+	&.OculusOrder {
+		background-color: variable.$grey;
+		color: variable.$steam !important;
+		box-shadow: inset -10px -10px 10px rgba(variable.$dark, 0.1);
+	}
+
+	&.SteamOrder {
+		background-color: variable.$steam;
+		color: variable.$grey !important;
+
+		box-shadow: inset 10px 10px 10px rgba(variable.$grey, 0.1),
+			inset -10px -10px 10px rgba(variable.$dark, 0.1);
+	}
+	&::before {
+		background: linear-gradient(
+			90deg,
+			rgba(white, 0) 0%,
+			rgba(white, 0) 70%,
+			rgba(white, 0.5) 70%,
+			rgba(white, 0.5) 100%
+		);
+	}
+	&::before {
+		content: "";
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		left: -110%;
+		top: 0;
+
+		transition: all 0.2s ease-in;
+
+		transform: skew(-20deg);
+
+		&:hover {
+			&::before {
+				left: 110%;
+			}
+		}
+	}
+
+	&:hover {
+		transform: scale(1.05);
+		&:not(.OculusOrder, .SteamOrder) {
+			background-color: variable.$active;
+		}
+
+		&::before {
+			left: 110%;
+		}
+	}
+
+	/*&.Steam {
+		&::after {
+			@extend %fa-icon;
+			@extend .fab;
+			content: fa-content($fa-var-steam);
+			padding-inline-start: 5px;
+		}
+	}*/
+}
+
+header {
+	width: 100%;
+	height: calc(100vh - 2 * variable.$navbarHeight);
+	min-height: 400px;
+
+	padding-block: variable.$navbarHeight;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+
+	background: url(variable.$IMG-ROOT + "MainBG.webp");
+	background-size: cover;
+	background-position: center;
+
+	.logo {
+		display: block;
+		margin: 0 auto;
+
+		padding: 10vh 10vw;
+		aspect-ratio: 5/3;
+		width: min(75vw, 400px);
+
+		object-fit: contain;
+
+		background: url(variable.$IMG-ROOT + "smudge.webp");
+		background-size: contain;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+
+	.mainButtons {
+		.preorderLinks {
+			display: flex;
+			justify-content: center;
+
+			flex-wrap: wrap;
+
+			gap: 10vw;
+			padding-inline: 20px;
+
+			font-weight: bold;
+			.OculusOrder,
+			.SteamOrder {
+				min-width: calc(4.5em + 10%);
+				font-size: calc(1.5rem + 0.1%);
+			}
+		}
+
+		h2 {
+			display: block;
+			color: variable.$grey;
+			font-weight: bolder;
+			text-align: center;
+			font-size: 1.5em;
+
+			width: max-content;
+			padding: variable.$padding;
+
+			background-color: rgba(variable.$dark, 0.75);
+			border-radius: 0.2em;
+
+			margin: 0 auto 1.5em auto;
+		}
+	}
+}
+
+.Content {
+	width: 100%;
+}
+
+.content-layout {
+	display: flex;
+	flex-direction: column;
+	gap: 3em;
+	margin: 0 auto;
+
+	@media screen and (min-width: variable.$widthLimit) {
+		padding-inline: variable.$padding;
+	}
+
+	hr {
+		width: 50vw;
+		height: 1px;
+		background-color: variable.$dark;
+		margin-inline: auto;
+		&.white {
+			background-color: variable.$grey;
+		}
+	}
+
+	& > div {
+		padding-inline: variable.$padding;
+
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1.5em;
+
+		justify-content: space-evenly;
+
+		p,
+		.txt {
+			flex: 2;
+			display: block;
+
+			font-weight: 500;
+			@media screen and (max-width: variable.$widthLimit) {
+				flex: auto;
+			}
+
+			@media screen and (min-width: variable.$widthLimit) {
+				min-width: 25ch;
+			}
+		}
+
+		img,
+		picture {
+			flex: 1;
+			min-width: variable.$minWidth;
+			max-width: 100%;
+			border-radius: 0.25em;
+			color: variable.$grey;
+			padding: 2px;
+			transition: all 0.2s ease-in-out;
+			&:hover {
+				transform: scale(1.05);
+			}
+		}
+
+		.Button {
+			margin: 0 auto;
+		}
+	}
+}
+
+section {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	padding-block-end: 7em;
+
+	background-color: variable.$black;
+
+	a:not(.Button) {
+		color: variable.$main;
+		text-decoration: none;
+		&:hover {
+			color: variable.$active;
+		}
+	}
+
+	h2 {
+		position: relative;
+		width: 100%;
+		margin-block: 0;
+
+		text-align: center;
+
+		.card {
+			padding: 1em;
+			margin: 0 auto;
+			max-width: min(60vw, variable.$minWidth);
+
+			background-color: variable.$dark;
+			z-index: 3;
+			transform: translateY(-1.5em);
+			border-radius: 0.1em;
+
+			img {
+				display: block;
+				margin: 0 auto;
+				z-index: 3;
+				max-height: 100px;
+				max-width: 100%;
+			}
+		}
+	}
+
+	@media screen and (max-width: variable.$widthLimit) {
+		background-attachment: fixed;
+	}
+
+	color: white;
+	&.white {
+		color: variable.$black;
+		background-color: variable.$grey;
+	}
+
+	&.trailers {
+		h2 {
+			color: variable.$main;
+			font-weight: 700;
+			font-size: xx-large;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			margin-block: variable.$padding;
+			padding-block-end: variable.$padding;
+
+			text-shadow: 2px 2px 0 variable.$active;
+		}
+
+		.content-layout {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			gap: 2em;
+			justify-content: space-evenly;
+			iframe {
+				display: inline-block;
+				aspect-ratio: 16/9;
+				width: min(90vw, variable.$minWidth);
+				transition: all 0.2s ease-in-out;
+				&:hover {
+					transform: scale(1.05);
+				}
+			}
+		}
+	}
+	&.basics .content-layout {
+		flex-direction: row;
+		flex-wrap: wrap;
+		& > div {
+			flex: 1;
+			min-width: variable.$minWidth;
+		}
+		h3 {
+			margin-top: 0;
+			text-align: center;
+		}
+	}
+	&.contact {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+		flex-direction: row;
+		gap: variable.$padding;
+		h2 {
+			margin-top: variable.$padding;
+		}
+		& > div {
+			width: 25vw;
+			min-width: 250px;
+			max-width: 500px;
+			padding: variable.$padding;
+			background-color: rgba(variable.$dark, 0.05);
+			border-radius: 1em;
+			display: flex;
+			flex-direction: column;
+
+			h3 {
+				margin-top: 0;
+			}
+
+			.links {
+				display: flex;
+				column-gap: variable.$padding;
+				flex-wrap: wrap;
+				flex: 1;
+				align-items: center;
+
+				a {
+					transition: all 0.2s ease-in-out;
+					&:hover {
+						transform: scale(1.05);
+					}
+				}
+			}
+			.list {
+				flex-direction: column;
+				align-items: baseline;
+			}
+		}
+	}
+	&.Mechanics {
+		$translateY: 2.7em;
+		color: variable.$black;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+
+		& .tool > .card {
+			display: flex;
+			flex-direction: column;
+			width: 45vw;
+			background-color: variable.$dark;
+			color: variable.$grey;
+			margin: auto 0;
+			padding: variable.$padding;
+
+			transform: translate(-$translateY);
+
+			box-shadow: 0 -10px 5px rgba(variable.$dark, 0.1);
+
+			justify-content: center;
+
+			@media screen and (max-width: 1100px) {
+				transform: translateY(-5em);
+				width: 70vw;
+			}
+			.txt,
+			h3 {
+				display: block;
+				width: 90%;
+				margin: 10px auto;
+				text-align: center;
+			}
+		}
+		img {
+			display: block;
+			&:hover {
+				transform: none !important;
+			}
+		}
+		& .tool:not(.left) {
+			@media screen and (max-width: 1100px) {
+				transform: translateY(5em);
+			}
+		}
+
+		.tool.left > .card {
+			transform: translate($translateY);
+			@media screen and (max-width: 1100px) {
+				transform: translateY(5em);
+				width: 70vw;
+			}
+		}
+	}
+}
+
+.news {
+	color: variable.$grey;
+	@media screen and (min-width: variable.$widthLimit) {
+		padding-inline: variable.$padding;
+	}
+	.articles {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+
+		width: 100%;
+
+		gap: variable.$padding;
+
+		margin-block-end: variable.$padding;
+		article {
+			transition: all 0.2s ease-in-out;
+			&:hover {
+				transform: scale(1.05);
+			}
+		}
+	}
+	article {
+		min-width: min(80vw, variable.$minWidth);
+		p {
+			text-justify: distribute;
+			text-align: center;
+		}
+		iframe {
+			width: 100%;
+			aspect-ratio: 16/9;
+			background-color: variable.$notfound;
+		}
+	}
+	a {
+		display: block;
+		margin-inline: auto;
+		width: max-content;
+		color: variable.$grey;
+		text-decoration: none;
+		transition: all 0.2s ease-in-out;
+		&:hover {
+			transform: scale(1.1);
+			color: whitesmoke;
+		}
+	}
+	.flashnews {
+		margin: variable.$padding auto;
+		border-radius: 0.5em;
+
+		position: relative;
+
+		z-index: 3;
+
+		background-image: url("/assets/Images/StoryBG.webp");
+		background-position: center;
+		background-size: cover;
+
+		article,
+		p {
+			width: 80vw;
+		}
+		article {
+			padding: variable.$padding;
+			background-color: rgba(variable.$notfound, 0.8);
+			backdrop-filter: blur(1px);
+		}
+
+		h3 {
+			display: block;
+			font-weight: bold;
+			font-size: x-large;
+			text-align: center;
+		}
+		time {
+			font-style: italic;
+		}
+	}
+}
+
+footer {
+	margin: 0 variable.$padding calc(variable.$navbarHeight + variable.$padding)
+		variable.$padding;
+	padding: variable.$padding;
+	color: variable.$grey;
+	font-size: small;
+	text-align: justify;
+	a {
+		color: variable.$main;
+		text-decoration: none;
+		&:hover {
+			color: variable.$active;
+		}
+	}
+	.main {
+		display: flex;
+		justify-content: space-evenly;
+		flex-direction: row;
+		flex-wrap: wrap;
+		padding: variable.$padding;
+		margin: 0;
+		div {
+			width: min(90vw, variable.$minWidth);
+		}
+		* {
+			margin: 0.1em 0;
+		}
+	}
+	.icons {
+		margin-top: variable.$padding;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		gap: variable.$padding;
+	}
+	.small {
+		max-width: 60px;
+		display: block;
+	}
+	.xsmall {
+		max-width: 40px;
+		display: block;
+	}
+	.copyright {
+		padding: variable.$padding;
+		margin: 0 auto;
+	}
+}
+
+.cookies {
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+	background-color: variable.$grey;
+	padding: variable.$padding;
+	border-top: solid variable.$black 1px;
+	h4,
+	p {
+		margin: 0.5em 0;
+		max-width: 80vw;
+	}
+
+	@media screen and (max-width: variable.$widthLimit) {
+		bottom: auto;
+		top: 0;
+		border-bottom: solid variable.$black 1px;
+		border-top: none;
+	}
+
+	button {
+		padding: 0.5em;
+		background-color: transparent;
+
+		color: variable.$black;
+		border-radius: 0.1em;
+		border: none;
+		transition: all 0.1s ease-in-out;
+		&:hover {
+			color: variable.$main;
+		}
+		&.accept {
+			background-color: variable.$main;
+			color: variable.$grey;
+			&:hover {
+				background-color: variable.$active;
+			}
+		}
+	}
+
+	z-index: 500;
+}

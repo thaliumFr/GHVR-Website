@@ -1,0 +1,224 @@
+nav {
+  width: 100%;
+  min-height: 75px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(18, 18, 18, 0.95);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  z-index: 1000;
+  position: fixed;
+}
+@media screen and (max-width: 600px) {
+  nav {
+    bottom: 0;
+  }
+  nav .links-container {
+    flex-direction: column;
+  }
+}
+nav .logo img {
+  display: block;
+  max-height: 50px;
+  max-width: max(10vw, 150px);
+  transition: all 0.2s ease-in-out;
+}
+@media screen and (min-width: 600px) {
+  nav .logo img {
+    content: url("../assets/Images/Green_Hell_VR_Inline.webp");
+  }
+}
+nav .logo img:hover {
+  transform: scale(1.1) rotate(-2deg);
+}
+nav .logo-big img {
+  display: block;
+  max-height: 150px;
+  max-width: 75%;
+  margin: 0 auto;
+}
+nav .link-tab {
+  display: flex;
+  gap: 25px;
+  height: 100%;
+  align-items: center;
+}
+@media screen and (max-width: 600px) {
+  nav .link-tab {
+    position: absolute;
+    width: max(45vw, 15em);
+    height: calc(100vh - 75px);
+    bottom: 100%;
+    right: 0;
+    transform: translateX(100%);
+    transform-origin: right;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    gap: 0;
+    background-color: rgba(8, 8, 8, 0.85);
+    transition: all 0.1s ease-in-out;
+  }
+  @supports ((-webkit-backdrop-filter: blur(5px)) or (backdrop-filter: blur(5px))) {
+    nav .link-tab {
+      -webkit-backdrop-filter: blur(5px);
+              backdrop-filter: blur(5px);
+    }
+  }
+  nav .link-tab.selected {
+    display: flex;
+    transform: translateX(0%);
+  }
+}
+nav .link-tab .links-container {
+  display: flex;
+  text-align: center;
+}
+nav .link-tab .links-container .dropdown {
+  color: hsl(0deg, 0%, 90%);
+  position: relative;
+  font-weight: bold;
+  z-index: 1001;
+}
+nav .link-tab .links-container .dropdown .items {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: -16.6666666667px;
+  width: 100%;
+  background-color: hsl(0deg, 0%, 90%);
+  padding: 16.6666666667px;
+  margin: 0;
+  flex-direction: column;
+  gap: 12.5px;
+  z-index: 1001;
+  box-shadow: 5px 5px 10px rgba(8, 8, 8, 0.2), inset 5px 5px 15px rgba(8, 8, 8, 0.1), inset -5px -5px 15px rgb(255, 255, 255);
+}
+nav .link-tab .links-container .dropdown .items hr {
+  width: 100%;
+  background-color: hsl(350deg, 1%, 7%);
+  margin: 0;
+  height: 2px;
+  border: none;
+}
+nav .link-tab .links-container .dropdown .items a {
+  color: hsl(350deg, 1%, 3%);
+  text-decoration: none;
+  transition: all ease-in-out 0.1s;
+}
+nav .link-tab .links-container .dropdown .items a:hover {
+  color: hsl(205deg, 90%, 25%);
+  transform: scale(1.05);
+}
+nav .link-tab .links-container .dropdown:hover .items, nav .link-tab .links-container .dropdown:focus .items, nav .link-tab .links-container .dropdown:focus-within .items {
+  display: flex;
+}
+nav .link-tab .links-container .dropdown:hover .arrow, nav .link-tab .links-container .dropdown:focus .arrow, nav .link-tab .links-container .dropdown:focus-within .arrow {
+  transform: rotate(180deg);
+}
+nav .link-tab .links-container .link-element {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  color: white;
+  height: 100%;
+  margin-inline: 1vw;
+  transition: all 0.1s ease-in-out;
+}
+nav .link-tab .links-container .link-element.Important {
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-rendering: geometricPrecision;
+  text-transform: uppercase;
+}
+nav .link-tab .links-container .link-element.SteamLink {
+  color: hsl(205deg, 90%, 25%);
+}
+nav .link-tab .links-container .link-element.SteamLink:hover {
+  color: hsl(205deg, 85%, 40%);
+}
+nav .link-tab .links-container .link-element:hover {
+  color: hsl(0deg, 0%, 90%);
+  transform: scale(1.05);
+}
+nav .link-tab .links-container .link-element:not(.dropdown)::after {
+  content: "";
+  position: absolute;
+  bottom: -25%;
+  --underlineWidth: 125%;
+  left: calc((var(--underlineWidth) - 100%) / -2);
+  width: var(--underlineWidth);
+  min-height: 3px;
+  background-color: hsl(350deg, 100%, 40%);
+  transform: scaleX(0);
+  transition: all 0.1s ease-in-out;
+}
+nav .link-tab .links-container .link-element:hover::after, nav .link-tab .links-container .link-element:focus-within::after {
+  transform: scaleX(1);
+}
+nav .hamburger {
+  --width: 30px;
+  --height: 3px;
+  width: var(--width);
+  height: var(--width);
+  position: relative;
+  cursor: pointer;
+}
+@media screen and (min-width: 600px) {
+  nav .hamburger {
+    display: none;
+  }
+}
+nav .hamburger .lines {
+  width: var(--width);
+  height: var(--height);
+  background-color: white;
+  border-radius: 1rem;
+  top: 50%;
+  position: absolute;
+  transition: all 0.2s ease-in-out;
+}
+nav .hamburger .lines::before {
+  content: "";
+  width: var(--width);
+  height: var(--height);
+  background-color: white;
+  border-radius: 1rem;
+  position: absolute;
+  bottom: calc(var(--width) / 2.5);
+  transition: all 0.2s ease-in-out;
+}
+nav .hamburger .lines::after {
+  content: "";
+  width: var(--width);
+  height: var(--height);
+  background-color: white;
+  border-radius: 1rem;
+  position: absolute;
+  top: calc(var(--width) / 2.5);
+  transition: all 0.2s ease-in-out;
+}
+nav .hamburger:hover .lines {
+  background-color: hsl(0deg, 0%, 90%);
+}
+nav .hamburger:hover .lines::before {
+  background-color: hsl(0deg, 0%, 90%);
+  bottom: calc(var(--width) / 2.25);
+}
+nav .hamburger:hover .lines::after {
+  background-color: hsl(0deg, 0%, 90%);
+  top: calc(var(--width) / 2.25);
+}
+nav .hamburger.selected .lines {
+  background-color: transparent;
+}
+nav .hamburger.selected .lines::before {
+  top: 0;
+  transform: rotate(-45deg);
+}
+nav .hamburger.selected .lines::after {
+  top: 0;
+  transform: rotate(45deg);
+}

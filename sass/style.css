@@ -1,0 +1,575 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+body,
+html {
+  padding: 0;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  scroll-behavior: smooth;
+  line-height: 1.5;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  background-color: hsl(350deg, 1%, 3%);
+}
+@media screen and (max-width: 600px) {
+  body,
+html {
+    -ms-scroll-snap-type: y proximity;
+        scroll-snap-type: y proximity;
+  }
+}
+
+.steamLogo {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  aspect-ratio: 1;
+  background-image: url("../assets/Images/Logo/Steam.png");
+  background-position: center;
+  background-size: contain;
+  margin-block: auto;
+}
+
+.metaLogo {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  aspect-ratio: 1;
+  background-image: url("../assets/Images/media/Meta.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-block: auto;
+}
+
+@media screen and (min-width: 600px) {
+  .phone-only {
+    display: none !important;
+  }
+}
+
+.Button {
+  display: block;
+  border-radius: 0.5rem;
+  padding: 12.5px 25px;
+  text-decoration: none;
+  text-align: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  overflow: hidden;
+  transition: all 0.1s ease-in-out;
+  position: relative;
+  font-size: medium;
+  font-weight: 600;
+  background-color: hsl(350deg, 100%, 40%);
+  color: white;
+  /*&.Steam {
+  	&::after {
+  		@extend %fa-icon;
+  		@extend .fab;
+  		content: fa-content($fa-var-steam);
+  		padding-inline-start: 5px;
+  	}
+  }*/
+}
+.Button.OculusOrder {
+  background-color: hsl(0deg, 0%, 90%);
+  color: hsl(205deg, 90%, 25%) !important;
+  box-shadow: inset -10px -10px 10px rgba(18, 18, 18, 0.1);
+}
+.Button.SteamOrder {
+  background-color: hsl(205deg, 90%, 25%);
+  color: hsl(0deg, 0%, 90%) !important;
+  box-shadow: inset 10px 10px 10px rgba(230, 230, 230, 0.1), inset -10px -10px 10px rgba(18, 18, 18, 0.1);
+}
+.Button::before {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 70%, rgba(255, 255, 255, 0.5) 70%, rgba(255, 255, 255, 0.5) 100%);
+}
+.Button::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: -110%;
+  top: 0;
+  transition: all 0.2s ease-in;
+  transform: skew(-20deg);
+}
+.Button::before:hover::before {
+  left: 110%;
+}
+.Button:hover {
+  transform: scale(1.05);
+}
+.Button:hover:not(.OculusOrder, .SteamOrder) {
+  background-color: hsl(350deg, 100%, 50%);
+}
+.Button:hover::before {
+  left: 110%;
+}
+
+header {
+  width: 100%;
+  height: calc(100vh - 150px);
+  min-height: 400px;
+  padding-block: 75px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background: url("../assets/Images/MainBG.webp");
+  background-size: cover;
+  background-position: center;
+}
+header .logo {
+  display: block;
+  margin: 0 auto;
+  padding: 10vh 10vw;
+  aspect-ratio: 5/3;
+  width: min(75vw, 400px);
+  -o-object-fit: contain;
+     object-fit: contain;
+  background: url("../assets/Images/smudge.webp");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+header .mainButtons .preorderLinks {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10vw;
+  padding-inline: 20px;
+  font-weight: bold;
+}
+header .mainButtons .preorderLinks .OculusOrder,
+header .mainButtons .preorderLinks .SteamOrder {
+  min-width: calc(4.5em + 10%);
+  font-size: calc(1.5rem + 0.1%);
+}
+header .mainButtons h2 {
+  display: block;
+  color: hsl(0deg, 0%, 90%);
+  font-weight: bolder;
+  text-align: center;
+  font-size: 1.5em;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 25px;
+  background-color: rgba(18, 18, 18, 0.75);
+  border-radius: 0.2em;
+  margin: 0 auto 1.5em auto;
+}
+
+.Content {
+  width: 100%;
+}
+
+.content-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+  margin: 0 auto;
+}
+@media screen and (min-width: 600px) {
+  .content-layout {
+    padding-inline: 25px;
+  }
+}
+.content-layout hr {
+  width: 50vw;
+  height: 1px;
+  background-color: hsl(350deg, 1%, 7%);
+  margin-inline: auto;
+}
+.content-layout hr.white {
+  background-color: hsl(0deg, 0%, 90%);
+}
+.content-layout > div {
+  padding-inline: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5em;
+  justify-content: space-evenly;
+}
+.content-layout > div p,
+.content-layout > div .txt {
+  flex: 2;
+  display: block;
+  font-weight: 500;
+}
+@media screen and (max-width: 600px) {
+  .content-layout > div p,
+.content-layout > div .txt {
+    flex: auto;
+  }
+}
+@media screen and (min-width: 600px) {
+  .content-layout > div p,
+.content-layout > div .txt {
+    min-width: 25ch;
+  }
+}
+.content-layout > div img,
+.content-layout > div picture {
+  flex: 1;
+  min-width: 200px;
+  max-width: 100%;
+  border-radius: 0.25em;
+  color: hsl(0deg, 0%, 90%);
+  padding: 2px;
+  transition: all 0.2s ease-in-out;
+}
+.content-layout > div img:hover,
+.content-layout > div picture:hover {
+  transform: scale(1.05);
+}
+.content-layout > div .Button {
+  margin: 0 auto;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  -webkit-padding-after: 7em;
+          padding-block-end: 7em;
+  background-color: hsl(350deg, 1%, 3%);
+  color: white;
+}
+section a:not(.Button) {
+  color: hsl(350deg, 100%, 40%);
+  text-decoration: none;
+}
+section a:not(.Button):hover {
+  color: hsl(350deg, 100%, 50%);
+}
+section h2 {
+  position: relative;
+  width: 100%;
+  margin-block: 0;
+  text-align: center;
+}
+section h2 .card {
+  padding: 1em;
+  margin: 0 auto;
+  max-width: min(60vw, 200px);
+  background-color: hsl(350deg, 1%, 7%);
+  z-index: 3;
+  transform: translateY(-1.5em);
+  border-radius: 0.1em;
+}
+section h2 .card img {
+  display: block;
+  margin: 0 auto;
+  z-index: 3;
+  max-height: 100px;
+  max-width: 100%;
+}
+@media screen and (max-width: 600px) {
+  section {
+    background-attachment: fixed;
+  }
+}
+section.white {
+  color: hsl(350deg, 1%, 3%);
+  background-color: hsl(0deg, 0%, 90%);
+}
+section.trailers h2 {
+  color: hsl(350deg, 100%, 40%);
+  font-weight: 700;
+  font-size: xx-large;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-block: 25px;
+  -webkit-padding-after: 25px;
+          padding-block-end: 25px;
+  text-shadow: 2px 2px 0 hsl(350deg, 100%, 50%);
+}
+section.trailers .content-layout {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2em;
+  justify-content: space-evenly;
+}
+section.trailers .content-layout iframe {
+  display: inline-block;
+  aspect-ratio: 16/9;
+  width: min(90vw, 200px);
+  transition: all 0.2s ease-in-out;
+}
+section.trailers .content-layout iframe:hover {
+  transform: scale(1.05);
+}
+section.basics .content-layout {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+section.basics .content-layout > div {
+  flex: 1;
+  min-width: 200px;
+}
+section.basics .content-layout h3 {
+  margin-top: 0;
+  text-align: center;
+}
+section.contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  flex-direction: row;
+  gap: 25px;
+}
+section.contact h2 {
+  margin-top: 25px;
+}
+section.contact > div {
+  width: 25vw;
+  min-width: 250px;
+  max-width: 500px;
+  padding: 25px;
+  background-color: rgba(18, 18, 18, 0.05);
+  border-radius: 1em;
+  display: flex;
+  flex-direction: column;
+}
+section.contact > div h3 {
+  margin-top: 0;
+}
+section.contact > div .links {
+  display: flex;
+  -moz-column-gap: 25px;
+       column-gap: 25px;
+  flex-wrap: wrap;
+  flex: 1;
+  align-items: center;
+}
+section.contact > div .links a {
+  transition: all 0.2s ease-in-out;
+}
+section.contact > div .links a:hover {
+  transform: scale(1.05);
+}
+section.contact > div .list {
+  flex-direction: column;
+  align-items: baseline;
+}
+section.Mechanics {
+  color: hsl(350deg, 1%, 3%);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+section.Mechanics .tool > .card {
+  display: flex;
+  flex-direction: column;
+  width: 45vw;
+  background-color: hsl(350deg, 1%, 7%);
+  color: hsl(0deg, 0%, 90%);
+  margin: auto 0;
+  padding: 25px;
+  transform: translate(-2.7em);
+  box-shadow: 0 -10px 5px rgba(18, 18, 18, 0.1);
+  justify-content: center;
+}
+@media screen and (max-width: 1100px) {
+  section.Mechanics .tool > .card {
+    transform: translateY(-5em);
+    width: 70vw;
+  }
+}
+section.Mechanics .tool > .card .txt,
+section.Mechanics .tool > .card h3 {
+  display: block;
+  width: 90%;
+  margin: 10px auto;
+  text-align: center;
+}
+section.Mechanics img {
+  display: block;
+}
+section.Mechanics img:hover {
+  transform: none !important;
+}
+@media screen and (max-width: 1100px) {
+  section.Mechanics .tool:not(.left) {
+    transform: translateY(5em);
+  }
+}
+section.Mechanics .tool.left > .card {
+  transform: translate(2.7em);
+}
+@media screen and (max-width: 1100px) {
+  section.Mechanics .tool.left > .card {
+    transform: translateY(5em);
+    width: 70vw;
+  }
+}
+
+.news {
+  color: hsl(0deg, 0%, 90%);
+}
+@media screen and (min-width: 600px) {
+  .news {
+    padding-inline: 25px;
+  }
+}
+.news .articles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 100%;
+  gap: 25px;
+  -webkit-margin-after: 25px;
+          margin-block-end: 25px;
+}
+.news .articles article {
+  transition: all 0.2s ease-in-out;
+}
+.news .articles article:hover {
+  transform: scale(1.05);
+}
+.news article {
+  min-width: min(80vw, 200px);
+}
+.news article p {
+  text-justify: distribute;
+  text-align: center;
+}
+.news article iframe {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background-color: hsl(350deg, 1%, 15%);
+}
+.news a {
+  display: block;
+  margin-inline: auto;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  color: hsl(0deg, 0%, 90%);
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+.news a:hover {
+  transform: scale(1.1);
+  color: whitesmoke;
+}
+.news .flashnews {
+  margin: 25px auto;
+  border-radius: 0.5em;
+  position: relative;
+  z-index: 3;
+  background-image: url("/assets/Images/StoryBG.webp");
+  background-position: center;
+  background-size: cover;
+}
+.news .flashnews article,
+.news .flashnews p {
+  width: 80vw;
+}
+.news .flashnews article {
+  padding: 25px;
+  background-color: rgba(39, 38, 38, 0.8);
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
+}
+.news .flashnews h3 {
+  display: block;
+  font-weight: bold;
+  font-size: x-large;
+  text-align: center;
+}
+.news .flashnews time {
+  font-style: italic;
+}
+
+footer {
+  margin: 0 25px 100px 25px;
+  padding: 25px;
+  color: hsl(0deg, 0%, 90%);
+  font-size: small;
+  text-align: justify;
+}
+footer a {
+  color: hsl(350deg, 100%, 40%);
+  text-decoration: none;
+}
+footer a:hover {
+  color: hsl(350deg, 100%, 50%);
+}
+footer .main {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 25px;
+  margin: 0;
+}
+footer .main div {
+  width: min(90vw, 200px);
+}
+footer .main * {
+  margin: 0.1em 0;
+}
+footer .icons {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 25px;
+}
+footer .small {
+  max-width: 60px;
+  display: block;
+}
+footer .xsmall {
+  max-width: 40px;
+  display: block;
+}
+footer .copyright {
+  padding: 25px;
+  margin: 0 auto;
+}
+
+.cookies {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background-color: hsl(0deg, 0%, 90%);
+  padding: 25px;
+  border-top: solid hsl(350deg, 1%, 3%) 1px;
+  z-index: 500;
+}
+.cookies h4,
+.cookies p {
+  margin: 0.5em 0;
+  max-width: 80vw;
+}
+@media screen and (max-width: 600px) {
+  .cookies {
+    bottom: auto;
+    top: 0;
+    border-bottom: solid hsl(350deg, 1%, 3%) 1px;
+    border-top: none;
+  }
+}
+.cookies button {
+  padding: 0.5em;
+  background-color: transparent;
+  color: hsl(350deg, 1%, 3%);
+  border-radius: 0.1em;
+  border: none;
+  transition: all 0.1s ease-in-out;
+}
+.cookies button:hover {
+  color: hsl(350deg, 100%, 40%);
+}
+.cookies button.accept {
+  background-color: hsl(350deg, 100%, 40%);
+  color: hsl(0deg, 0%, 90%);
+}
+.cookies button.accept:hover {
+  background-color: hsl(350deg, 100%, 50%);
+}

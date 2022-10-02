@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en" onload="load()">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="referrer" content="strict-origin" />
+	<meta name="description" content="Green Hell VR is an Open World Survival game set in the Amazon
+							rainforest, based on the successful PC title Green Hell" />
+	<meta name="keywords" content="GHVR, Green hell VR, VR, oculus, meta, quest, quest 2" />
+	<meta http-equiv="cache-control" content="max-age=1200" />
+	<meta http-equiv="expires" content="1200" />
+	<meta name="author" content="Thalium, Incuvo" />
+	<meta name="robots" content="index, follow" />
+	<link rel="shortcut icon" href="assets/Uncompressed/GHVR-logo-low.png" type="image/x-icon">
+
+	<meta property="og:title" content="Green Hell VR" />
+	<meta property="og:image" content="assets/Uncompressed/GHVR-logo-low.png" />
+	<meta property="og:type" content="website" />
+	<meta name="og:description" content="Green Hell VR is an Open World Survival game set in the Amazon
+							rainforest, based on the successful PC title Green Hell" />
+	<meta name="theme-color" content="#cc0022" />
+
+	<title>Green Hell VR</title>
+
+	<link rel="shortcut icon" href="assets/Uncompressed/GHVR-logo-low.png" type="image/x-icon" />
+
+	<link rel="stylesheet" href="/sass/style.css" media="all" />
+	<link rel="stylesheet" href="/sass/navbar.css" media="all" />
+</head>
+
+<body>
+	<nav>
+		<div class="link-tab">
+			<div class="links-container phone-only">
+				<a class="logo-big" href="https://greenhellvr.com/">
+					<picture>
+						<source type="image/webp" srcset="assets/Images/Green_Hell_VR.webp" />
+						<source type="image/png" srcset="assets/Uncompressed/Green_Hell_VR.png" />
+						<img src="assets/Uncompressed/Green_Hell_VR.png" alt="Green Hell VR logo" class="logo-big"
+							decoding="async" loading="lazy" height="auto" width="auto" />
+					</picture>
+				</a>
+			</div>
+			<div class="links-container">
+				<div class="dropdown link-element">
+					Buy GHVR
+					<div class="items">
+						<a href="https://www.oculus.com/experiences/quest/3815577785147028/" target="_blank">
+							Quest 2
+						</a>
+						<hr>
+						<a href="https://store.steampowered.com/app/1782330/" target="_blank">
+							Steam VR
+						</a>
+					</div>
+				</div>
+				<a class="link-element" href="#top">Home</a>
+				<a class="link-element" href="#quest">Quest</a>
+				<a class="link-element" href="#pcvr">PCVR</a>
+				<a class="link-element" href="#news">News</a>
+				<a class="link-element" href="#contact">Contact</a>
+			</div>
+		</div>
+		<a class="logo link-element" href="https://greenhellvr.com/">
+			<picture>
+				<source type="image/webp" srcset="assets/Images/Green_Hell_VR.webp" />
+				<source type="image/png" srcset="assets/Uncompressed/Green_Hell_VR.png" />
+				<img src="assets/Uncompressed/Green_Hell_VR.png" alt="Green Hell VR logo" class="logo-big"
+					decoding="async" loading="lazy" height="auto" width="auto" />
+			</picture>
+		</a>
+		<div class="hamburger" onclick="ToggleNavbar()">
+			<div class="lines"></div>
+		</div>
+	</nav>
+	<header id="top">
+		<picture>
+			<source type="image/webp" srcset="assets/Images/Green_Hell_VR.webp" />
+			<source type="image/png" srcset="assets/Uncompressed/Green_Hell_VR.png" />
+			<img src="assets/Uncompressed/Green_Hell_VR.png" alt="Green Hell VR logo" class="logo" decoding="async"
+				loading="lazy" height="auto" width="auto" />
+		</picture>
+		<div class="mainButtons">
+			<div class="preorderLinks">
+				<a href="https://www.oculus.com/experiences/quest/3815577785147028/" class="Button OculusOrder">Buy on
+					Quest 2
+					<div class="metaLogo"></div></a>
+				<a class="Button SteamOrder" href="https://store.steampowered.com/app/1782330/">Wishlist on Steam
+					<div class="steamLogo"></div></a>
+			</div>
+		</div>
+	</header>
+	<div class="Content" id="Content">
+		<section class="trailers white" id="trailers">
+			<h2 class="title">
+				<div class="card">
+					<picture>
+						<source type="image/webp" srcset="assets/Uncompressed/Trailers.jpg" />
+						<source type="image/png" srcset="assets/Uncompressed/Trailers.jpg" />
+						<img src="assets/Uncompressed/Trailers.jpg" alt="Green Hell VR Quest" decoding="async"
+							loading="lazy" height="auto" width="auto" />
+					</picture>
+				</div>
+			</h2>
+			<div class="content-layout">
+				<iframe src="https://tube.rvere.com/embed?v=FydVSKL2-dc&color=white&rel=0&iv_load_policy=3"
+					title="Gameplay Trailer" frameborder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+					allowfullscreen>
+				</iframe>
+
+				<iframe src="https://tube.rvere.com/embed?v=sOk2VTDaCXs&color=white&rel=0&iv_load_policy=3"
+					title="Gameplay Trailer" frameborder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+					allowfullscreen>
+				</iframe>
+
+				<iframe src="https://tube.rvere.com/embed?v=Ak5NLYq_TMY&color=white&rel=0&iv_load_policy=3"
+					title="Gameplay Trailer" frameborder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+					allowfullscreen>
+				</iframe>
+			</div>
+		</section>
+		<section class="Quest" id="quest">
+			<h2>
+				<div class="card">
+					<picture>
+						<source type="image/webp" srcset="assets/Images/GHVR-Quest.webp" />
+						<source type="image/png" srcset="assets/Uncompressed/GHVR-Quest.png" />
+						<img src="assets/Uncompressed/GHVR-Quest.png" alt="Green Hell VR Quest" decoding="async"
+							loading="lazy" height="auto" width="auto" />
+					</picture>
+				</div>
+			</h2>
+			<div class="content-layout">
+				<div>
+					<picture>
+						<source type="image/webp" srcset="assets/Uncompressed/Healing.png" />
+						<source type="image/png" srcset="assets/Uncompressed/Healing.png" />
+						<img src="assets/Uncompressed/Healing.png" alt="Green Hell VR Quest" decoding="async"
+							loading="lazy" height="auto" width="auto" />
+					</picture>
+					<p>
+						<strong> Green Hell VR: Quest Edition </strong> is a fresh and
+						refurbished look on the succesful PC title
+						<strong> Green Hell </strong> but on the standalone Meta Quest VR
+						headset! Delve into the jungle with
+						<strong>
+							realistic crafting, beautiful landscapes and a lot of dangers
+						</strong>
+						lurking in the thick bushes of the Amazonian jungle. You will need
+						to learn and take notes of
+						<strong> real-life survival techniques </strong> in order to
+						survive these harsh circumstances.
+					</p>
+				</div>
+				<div>
+					<p>
+						Follow the story of <i> Jake Higgins </i>, a famous
+						anthropologist, who is thrown deep into the emerald and
+						impenetrable Amazonian rain forest -
+						<strong> the green hell </strong>. What you discover will be worse
+						than what you fought so hard against to survive. <br /><br />
+						Find yourself <strong> stranded in a dangerous jungle </strong>,
+						surrounded by <strong> predators </strong> with only a trusty
+						<strong> smartwatch, backpack, and the survival guide, </strong>
+						so craft away! VR makes <strong> crafting </strong> even more
+						realistic as you need to find the right elements and put them
+						together in a specific way to make tools, spears, and shelter -
+						<strong> all by hand! </strong> Watch your vitals and discover
+						herbs with their medical potential to stay healthy. <br /><br />
+						Hunt wild animals to secure the next meal and defend yourself with
+						a bow and arrow - work on your aim and level up your skill. With
+						mechanics adjusted to virtual reality,
+						<strong> Green Hell VR: Quest Edition </strong> is a truly
+						immersive and demanding game - Find out how long you can stay
+						alive.
+					</p>
+					<picture>
+						<source type="image/webp" srcset="assets/Uncompressed/Fight.png" />
+						<source type="image/png" srcset="assets/Uncompressed/Fight.png" />
+						<img src="assets/Uncompressed/Fight.png" alt="Smartwatch" decoding="async" loading="lazy"
+							height="auto" width="auto" />
+					</picture>
+				</div>
+				<div>
+					<picture>
+						<source type="image/webp" srcset="assets/Uncompressed/LightEmUp.png" />
+						<source type="image/png" srcset="assets/Uncompressed/LightEmUp.png" />
+						<img src="assets/Uncompressed/LightEmUp.png" alt="Smartwatch" decoding="async" loading="lazy"
+							height="auto" width="auto" />
+					</picture>
+					<p>
+						This <strong> custom-made game for the Meta Quest 2 </strong> is
+						made to take advantage of the maximum of performances the
+						standalone headset can deliver. We used a plethora of
+						<strong> cutting-edge technologies </strong> when it comes to
+						Quest game development.
+
+						<a href="https://developer.oculus.com/blog/introducing-application-spacewarp/" target="_blank"
+							rel="noopener noreferrer">ASW</a>
+						technology allows to provide the best experience of
+						<strong> Green Hell VR: Quest Edition possible. </strong>
+						<br /><br />
+
+						<strong> Green Hell VR: Quest Edition </strong> will give you a
+						full <strong> immersion </strong> in the heart of the rainforest
+						like you have never seen before. So, what are
+						<strong> YOU </strong> waiting for? Click the button below to buy
+						the game <strong> NOW! </strong> <br /><br />
+						<a href="https://www.oculus.com/experiences/quest/3815577785147028/" class="Button OculusOrder">
+							Buy on Quest 2
+							<span class="metaLogo"></span>
+						</a>
+					</p>
+				</div>
+			</div>
+		</section>
+		<section class="Mechanics white" id="mechanics">
+			<h2>
+				<div class="card">
+					<picture>
+						<source type="image/webp" srcset="assets/Uncompressed/Mechanics.jpg" />
+						<source type="image/png" srcset="assets/Uncompressed/Mechanics.jpg" />
+						<img src="assets/Uncompressed/Mechanics.jpg" alt="Green Hell VR Quest" decoding="async"
+							loading="lazy" height="auto" width="auto" />
+					</picture>
+				</div>
+			</h2>
+			<div class="content-layout">
+				<div class="tool left">
+					<div class="card">
+						<h3>Bow & Arrows</h3>
+						<div class="txt">
+							Hunt wild animals to secure the next meal and defend yourself.
+							This feature is fully immersive, which means that you need to
+							work on your aim, level up your skill, and remember… always
+							shoot for the head!
+						</div>
+					</div>
+					<img src="/assets/Uncompressed/DrawingBow.jpg" alt="Bow & Arrows" />
+				</div>
+				<div class="tool">
+					<img src="/assets/Uncompressed/DrawingWatch.jpg" alt="The Smartwatch" />
+					<div class="card">
+						<h3>The Smartwatch</h3>
+						<div class="txt">
+							Top notch, solar powered smartwatch that gives you information
+							about your body - macroelements, water or level of fatigue. Way
+							more than the mundane one can provide, right?
+						</div>
+					</div>
+				</div>
+				<div class="tool left">
+					<div class="card">
+						<h3>The Notebook</h3>
+						<div class="txt">
+							No, not the movie! You are provided with a notebook where all
+							your discoveries are printed for the future reference. There are
+							some tips written in there, too! You will learn how to make a
+							fire, build your camp, and what heals specific wounds and
+							diseases.
+						</div>
+					</div>
+					<img src="/assets/Uncompressed/DrawingNotebook.jpg" alt="The Notebook" />
+				</div>
+				<div class="tool">
+					<img src="/assets/Uncompressed/DrawingFishing.jpg" alt="Rod & Bait" />
+					<div class="card">
+						<h3>Rod & Bait</h3>
+						<div class="txt">
+							Sounds easy, right? Well, you need to find the right bait for
+							the fish you are trying to catch and of course make the rod. Be
+							careful walking into water though - something might leech on to
+							you.
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="PC" id="pcvr">
+			<h2>
+				<div class="card">
+					<picture>
+						<source type="image/webp" srcset="assets/Uncompressed/Logo/Green_Hell_VR_Inline.png" />
+						<source type="image/png" srcset="assets/Uncompressed/Logo/Green_Hell_VR_Inline.png" />
+						<img src="assets/Uncompressed/Logo/Green_Hell_VR_Inline.png" alt="Green Hell VR Quest"
+							decoding="async" loading="lazy" height="auto" width="auto" />
+					</picture>
+				</div>
+			</h2>
+			<div class="content-layout">
+				<div>
+					<p>
+						<strong> Green Hell VR </strong> is an
+						<strong> Open World Survival </strong> game set in the Amazon
+						rainforest, based on the successful PC title
+						<strong> Green Hell </strong>. You are left alone in the jungle
+						with no food or equipment. To survive, you must learn
+						<strong> real-life survival techniques </strong>, and crafting
+						weapons can be <strong> a matter of life and death. </strong>
+						<br /><br />
+						You will have to face the vagaries of the weather to make your way
+						through through this mysterious forest and get out of this place
+						in <strong> one piece </strong>. You will have to face your
+						weaknesses, as well as
+						<i>
+							hunger, thirst, fatigue, wild animals, tropical diseases and
+							deteriorating mental health.
+						</i>
+					</p>
+					<picture>
+						<source type="image/webp" srcset="assets/Uncompressed/Lake.png" />
+						<source type="image/png" srcset="assets/Uncompressed/Lake.png" />
+						<img src="assets/Uncompressed/Lake.png" alt="Green Hell VR Quest" decoding="async"
+							loading="lazy" height="auto" width="auto" />
+					</picture>
+				</div>
+				<div>
+					<picture>
+						<source type="image/webp" srcset="assets/Uncompressed/ScaryJaguar.jpg" />
+						<source type="image/png" srcset="assets/Uncompressed/ScaryJaguar.jpg" />
+						<img src="assets/Uncompressed/ScaryJaguar.jpg" alt="Green Hell VR Quest" decoding="async"
+							loading="lazy" height="auto" width="auto" />
+					</picture>
+					<p>
+						In the core of
+						<strong> the colorful Amazonian rainforest </strong>, you will
+						need to learn how this deadly environment work to be able to make
+						your way through the forest and discover
+						<strong> mysterious secrets. </strong> <br /><br />
+						In this realistic forest you will be able to find extremely varied
+						animals, from the little capybaras up to the legendary jaguars. It
+						is <strong> YOUR time </strong> to decide - click the button below
+						if you are <strong> brave </strong> enough to
+						<strong> survive </strong> in the Amazonian jungle
+						<strong> ALL ON YOUR OWN! </strong> <br /><br />
+						<a class="Button SteamOrder" href="https://store.steampowered.com/app/1782330/">Wishlist on
+							Steam VR <span class="steamLogo"></span></a>
+					</p>
+				</div>
+			</div>
+		</section>
+		<section class="basics white" id="basics">
+			<h2>
+				<div class="card">
+					<picture>
+						<source type="image/webp" srcset="assets/Uncompressed/Gameplay.jpg" />
+						<source type="image/png" srcset="assets/Uncompressed/Gameplay.jpg" />
+						<img src="assets/Uncompressed/Gameplay.jpg" alt="Green Hell VR Quest" decoding="async"
+							loading="lazy" height="auto" width="auto" />
+					</picture>
+				</div>
+			</h2>
+			<div class="content-layout">
+				<div>
+					<img src="assets/Uncompressed/Crafting.jpg" alt="Crafting" decoding="async" loading="lazy"
+						height="auto" width="auto" />
+					<div class="txt">
+						<h3>Crafting</h3>
+						<p>
+							You are <strong> stranded </strong> in the Amazon with almost
+							nothing, so <strong> crafting </strong> is your best friend. The
+							VR experience makes <strong> crafting </strong> even more
+							realistic as you need to find the right elements and put them
+							together in a specific way to make
+							<strong> tools or shelter. </strong>
+						</p>
+					</div>
+				</div>
+				<div>
+					<img src="assets/Uncompressed/Food.jpg" alt="Food" decoding="async" loading="lazy" height="auto"
+						width="auto" />
+					<div class="txt">
+						<h3>Food sources</h3>
+						<p>
+							<strong> You don’t have to kill animals to survive. </strong>
+							There are tasty and nutritious fruits like coconuts or bananas,
+							a lot of mushrooms and plenty of herbs, bulbs and nuts. These
+							are sources of
+							<strong> healthy proteins, carbohydrates and fats. </strong>
+						</p>
+					</div>
+				</div>
+				<div>
+					<img src="assets/Uncompressed/Healing.jpg" alt="Healing" decoding="async" loading="lazy"
+						height="auto" width="auto" />
+					<div class="txt">
+						<h3>Healing</h3>
+						<p>
+							Experiment with different potions to
+							<strong> survive in the wild </strong>. You will discover herbs
+							and their medical potential by mixing them, and making a brew
+							over the fire. Be careful though, some herbs don’t go together,
+							and some… <strong> well, you’ll see. </strong>
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="news" id="news">
+			<h2>
+				<div class="card">
+					<picture>
+						<source type="image/webp" srcset="assets/Images/greenNews.webp" />
+						<source type="image/png" srcset="assets/Uncompressed/greenNews.png" />
+						<img src="assets/Uncompressed/greenNews.png" alt="Green Hell VR Quest" decoding="async"
+							loading="lazy" height="auto" width="auto" />
+					</picture>
+				</div>
+			</h2>
+			<div class="flashnews">
+				<article>
+					<h3>Game is released on Quest 2!</h3>
+					<p>
+						Here we go! You can now try to survive in the rainforest of
+						<strong> Green Hell VR: Quest Edition! </strong><br />
+					</p>
+					<a href="https://www.oculus.com/experiences/quest/3815577785147028/" class="Button OculusOrder">
+						Buy on Quest 2
+						<span class="metaLogo"></span>
+					</a>
+				</article>
+			</div>
+			<div class="articles">
+				<article>
+					<h3 class="title">Release trailer</h3>
+					<iframe src="https://tube.rvere.com/embed?v=FydVSKL2-dc&color=white&rel=0&iv_load_policy=3"
+						title="Launch Trailer" frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen></iframe>
+					<time datetime="2022-01-21">April 7th 2022</time>
+				</article>
+				<article>
+					<h3 class="title">Gameplay Trailer</h3>
+
+					<iframe src="https://tube.rvere.com/embed?v=Ak5NLYq_TMY&color=white&rel=0&iv_load_policy=3"
+						title="Gameplay Trailer" frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen>
+					</iframe>
+					<time datetime="2022-02-21">21 feb. 2022</time>
+				</article>
+				<article>
+					<h3 class="title">Quest 2 Sounds and physics</h3>
+					<iframe src="https://tube.rvere.com/embed?v=9eqPXMobb0U&color=white&rel=0&iv_load_policy=3"
+						title="Gameplay trailer" frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen></iframe>
+					<time datetime="2022-02-06">6 feb. 2022</time>
+				</article>
+			</div>
+			<a href="https://greenhellvr.com/news" target="_blank" rel="noopener noreferrer" class="Button">+ More
+				news</a>
+		</section>
+		<section class="contact white" id="contact">
+			<h2>
+				<div class="card">
+					<picture>
+						<source type="image/webp" srcset="assets/Uncompressed/SocialMedia.jpg" />
+						<source type="image/png" srcset="assets/Uncompressed/SocialMedia.jpg" />
+						<img src="assets/Uncompressed/SocialMedia.jpg" alt="Green Hell VR Quest" decoding="async"
+							loading="lazy" height="auto" width="auto" />
+					</picture>
+				</div>
+			</h2>
+			<div class="incuvo">
+				<h3>Incuvo</h3>
+				<div class="links">
+					<a class="twitter" href="https://twitter.com/IncuvoGames"><img
+							src="/assets/Images/media/Twitter.svg" alt="" height="30" width="30" /></a>
+					<a class="ytb" href="https://www.youtube.com/c/IncuvoGames"><img
+							src="/assets/Images/media/Youtube.png" alt="" height="30" width="30" /></a>
+					<a class="insta" href="https://www.instagram.com/incuvogames/"><img
+							src="/assets/Images/media/Instagram.png" alt="" height="30" width="30" /></a>
+					<a class="facebook" href="https://www.facebook.com/incuvogames"><img
+							src="/assets/Images/media/Facebook.png" alt="" height="30" width="30" /></a>
+					<a href="mailto:info@incuvo.com"><img src="/assets/Images/media/Mail.svg" alt="Mail" height="30"
+							width="35" /></a>
+					<a class="linkedin" href="https://www.linkedin.com/company/incuvo/"><img
+							src="/assets/Images/media/LinkedIn.png" alt="" height="30" width="35" /></a>
+				</div>
+			</div>
+			<div class="ghvr">
+				<h3>Green Hell VR</h3>
+				<div class="links">
+					<a class="twitter" href="https://twitter.com/GreenHellVR"><img
+							src="/assets/Images/media/Twitter.svg" alt="" height="30" width="30" /></a>
+					<a class="discord" href="https://discord.gg/cn7DTwuKGp"><img src="/assets/Images/media/Discord.svg"
+							alt="" height="30" width="30" /></a>
+					<a class="insta" href="https://www.instagram.com/greenhellvr/"><img
+							src="/assets/Images/media/Instagram.png" alt="" height="30" width="30" /></a>
+					<a class="facebook" href="https://www.facebook.com/GreenHellVR"><img
+							src="/assets/Images/media/Facebook.png" alt="" height="30" width="30" /></a>
+				</div>
+			</div>
+			<div>
+				<h3>Marketing</h3>
+				<div class="links list">
+					<a href="mailto:info@incuvo.com">info@incuvo.com</a>
+					<a href="tel:+48 602 44 20 75">+48 602 44 20 75</a>
+					<a href="https://drive.google.com/drive/folders/1Qk75Vtr1PN40ByTUSddH6Fhwr0LXkjeS" target="_blank"
+					rel="noopener noreferrer">Press kit</a>
+				</div>
+			</div>
+		</section>
+	</div>
+
+	<footer>
+		<div class="main">
+			<div>
+				<h3>
+					<picture>
+						<source type="image/webp" srcset="assets/Images/Logo/Incuvo.webp" />
+						<source type="image/png" srcset="assets/Uncompressed/Logo/Incuvo.png" />
+						<img src="assets/Uncompressed/Logo/Incuvo.png" alt="Incuvo" decoding="async" loading="lazy"
+							height="auto" width="auto" />
+					</picture>
+				</h3>
+				<address>Ligocka 103, 40-568 Katowice, Poland</address>
+				<p>
+					Incuvo is the developer and producer of Green Hell VR, follow us for
+					updates.
+				</p>
+			</div>
+			<div>
+				Green Hell doesn't belong to Incuvo but to Creepy Jar, only Green Hell
+				VR and Green Hell VR: Quest Edition are owned by Incuvo and the Group.
+				<br /><br />
+				Website designed by Thalium
+			</div>
+		</div>
+
+		<div class="copyright">
+			<div class="icons">
+				<picture>
+					<source type="image/webp" srcset="assets/Images/Logo/Creepyjar.webp" />
+					<source type="image/png" srcset="assets/Uncompressed/Logo/Creepyjar.png" />
+					<img src="assets/Uncompressed/Logo/Creepyjar.png" alt="Incuvo" decoding="async" loading="lazy"
+						height="auto" width="auto" class="small" />
+				</picture>
+			</div>
+			<p>
+				©2017-2021 Creepy Jar S.A. All rights reserved. Green Hell and Creepy
+				Jar are all trademarks and/or registered trademarks of Creepy Jar S.A.
+				All rights reserved. Green Hell and Creepy Jar are all trademarks
+				and/or registered trademarks in the US and/or other countries. All
+				rights reserved. Unless otherwise indicated, Green Hell game is
+				copyrighted by Creepy Jar S.A. All rights reserved.
+			</p>
+			<div class="icons">
+				<picture>
+					<source type="image/webp" srcset="assets/Images/Logo/Incuvo.webp" />
+					<source type="image/png" srcset="assets/Uncompressed/Logo/Incuvo.png" />
+					<img src="assets/Uncompressed/Logo/Incuvo.png" alt="Incuvo" decoding="async" loading="lazy"
+						height="auto" width="auto" class="small" />
+				</picture>
+			</div>
+			<p>
+				All product names, logos, brands, and registered trademarks are the
+				property of their respective owners. Incuvo and Green Hell VR logo are
+				registered trademarks of Incuvo S.A. All rights reserved. By using
+				Incuvo's service and so this website you agree Incuvo's
+				<a href="https://incuvo.com/en/privacy-policy" target="_blank" rel="noopener noreferrer">privacy
+					policy</a>.
+			</p>
+			<div class="icons">
+				<picture>
+					<source type="image/webp" srcset="assets/Images/media/Steam.png" />
+					<source type="image/png" srcset="assets/Images/media/Steam.png" />
+					<img src="assets/Images/media/Steam.png" alt="Incuvo" decoding="async" loading="lazy" height="auto"
+						width="auto" class="xsmall" />
+				</picture>
+				<picture>
+					<source type="image/png" srcset="assets/Images/media/MetaWhite.png" />
+					<img src="assets/Images/media/MetaWhite.png" alt="Incuvo" decoding="async" loading="lazy"
+						height="auto" width="auto" class="xsmall" />
+				</picture>
+			</div>
+			<p>
+				© 2022 Valve Corporation. All rights reserved. All trademarks are
+				property of their respective owners in the US and other countries.
+				Meta © 2022 All rights reserved. All trademarks are property of their
+				respective owners in the US and other countries.
+				<a href="https://incuvo.com/en/privacy-policy" target="_blank" rel="noopener noreferrer">privacy
+					policy</a>.
+			</p>
+		</div>
+	</footer>
+
+	<div class="cookies" id="cookie">
+		<h4>Cookies</h4>
+		<p>
+			By clicking “Allow Cookies”, you agree to the storing of cookies on your
+			device to enhance site navigation.
+		</p>
+		<button onclick="acceptCookies()" class="accept">Allow Cookies</button>
+		<button onclick="denyCookies()">Deny Cookies</button>
+	</div>
+
+	<script type="text/javascript" src="js/index.js" defer></script>
+</body>
+
+</html>

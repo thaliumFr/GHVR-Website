@@ -1,0 +1,277 @@
+@use "./variable.scss";
+@forward "./variable.scss";
+// NAVBAR
+nav {
+	width: 100%;
+	min-height: variable.$navbarHeight;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	gap: 1rem;
+	background: rgba(variable.$dark, 0.95);
+
+	backdrop-filter: blur(5px);
+
+	z-index: 1000;
+	position: fixed;
+
+	@media screen and (max-width: variable.$widthLimit) {
+		bottom: 0;
+		.links-container {
+			flex-direction: column;
+		}
+	}
+
+	.logo {
+		img {
+			display: block;
+			max-height: 50px;
+			max-width: #{"max(10vw, 150px)"};
+			transition: all 0.2s ease-in-out;
+			@media screen and (min-width: variable.$widthLimit) {
+				content: url(variable.$IMG-ROOT + "Green_Hell_VR_Inline.webp");
+			}
+			&:hover {
+				transform: scale(1.1) rotate(-2deg);
+			}
+		}
+	}
+
+	.logo-big {
+		img {
+			display: block;
+			max-height: 150px;
+			max-width: 75%;
+			margin: 0 auto;
+		}
+	}
+	.link-tab {
+		@media screen and (max-width: variable.$widthLimit) {
+			position: absolute;
+			width: #{"max(45vw, 15em)"};
+			height: calc(100vh - 75px);
+			bottom: 100%;
+			right: 0;
+			transform: translateX(100%);
+			transform-origin: right;
+			flex-direction: column;
+			justify-content: space-evenly;
+			text-align: center;
+			gap: 0;
+
+			background-color: rgba(variable.$black, 0.85);
+			@supports (backdrop-filter: blur(5px)) {
+				backdrop-filter: blur(5px);
+			}
+
+			transition: all 0.1s ease-in-out;
+
+			&.selected {
+				display: flex;
+				transform: translateX(00%);
+			}
+		}
+		display: flex;
+		gap: variable.$padding;
+		height: 100%;
+		align-items: center;
+
+		.links-container {
+			display: flex;
+			text-align: center;
+
+			.dropdown {
+				color: variable.$grey;
+				position: relative;
+				font-weight: bold;
+				z-index: 1001;
+				.items {
+					display: none;
+					position: absolute;
+					top: 100%;
+					left: -(variable.$padding/1.5);
+					width: 100%;
+
+					background-color: variable.$grey;
+					padding: variable.$padding/1.5;
+					margin: 0;
+
+					flex-direction: column;
+					gap: calc(variable.$padding/2);
+
+					z-index: 1001;
+
+					box-shadow: 5px 5px 10px rgba(variable.$black, 0.2),
+						inset 5px 5px 15px rgba(variable.$black, 0.1),
+						inset -5px -5px 15px rgba(255, 255, 255, 1);
+
+					hr {
+						width: 100%;
+						background-color: variable.$dark;
+						margin: 0;
+						height: 2px;
+						border: none;
+					}
+
+					a {
+						color: variable.$black;
+						text-decoration: none;
+						transition: all ease-in-out 0.1s;
+						&:hover {
+							color: variable.$steam;
+							transform: scale(1.05);
+						}
+					}
+				}
+				&:hover,
+				&:focus,
+				&:focus-within {
+					.items {
+						display: flex;
+					}
+					.arrow {
+						transform: rotate(180deg);
+					}
+				}
+			}
+
+			.link-element {
+				display: block;
+				position: relative;
+				text-decoration: none;
+				color: white;
+				height: 100%;
+				margin-inline: 1vw;
+
+				transition: all 0.1s ease-in-out;
+
+				&.Important {
+					font-weight: 600;
+					letter-spacing: 2px;
+					text-rendering: geometricPrecision;
+					text-transform: uppercase;
+				}
+
+				&.SteamLink {
+					color: variable.$steam;
+					&:hover {
+						color: variable.$steamActive;
+					}
+				}
+
+				&:hover {
+					color: variable.$grey;
+					transform: scale(1.05);
+				}
+				&:not(.dropdown)::after {
+					content: "";
+					position: absolute;
+
+					bottom: -25%;
+
+					--underlineWidth: 125%;
+
+					left: calc((var(--underlineWidth) - 100%) / -2);
+					width: var(--underlineWidth);
+
+					min-height: 3px;
+
+					background-color: variable.$main;
+
+					transform: scaleX(0);
+					transition: all 0.1s ease-in-out;
+				}
+				&:hover,
+				&:focus-within {
+					&::after {
+						transform: scaleX(1);
+					}
+				}
+			}
+		}
+	}
+
+	.hamburger {
+		@media screen and (min-width: variable.$widthLimit) {
+			display: none;
+		}
+
+		--width: 30px;
+		--height: 3px;
+
+		width: var(--width);
+		height: var(--width);
+
+		position: relative;
+
+		cursor: pointer;
+
+		.lines {
+			width: var(--width);
+			height: var(--height);
+
+			background-color: white;
+			border-radius: 1rem;
+
+			top: 50%;
+
+			position: absolute;
+			transition: all 0.2s ease-in-out;
+
+			&::before {
+				content: "";
+				width: var(--width);
+				height: var(--height);
+
+				background-color: white;
+				border-radius: 1rem;
+				position: absolute;
+
+				bottom: calc(var(--width) / 2.5);
+
+				transition: all 0.2s ease-in-out;
+			}
+			&::after {
+				content: "";
+				width: var(--width);
+				height: var(--height);
+
+				background-color: white;
+				border-radius: 1rem;
+				position: absolute;
+
+				top: calc(var(--width) / 2.5);
+
+				transition: all 0.2s ease-in-out;
+			}
+		}
+
+		&:hover {
+			.lines {
+				background-color: variable.$grey;
+				&::before {
+					background-color: variable.$grey;
+					bottom: calc(var(--width) / 2.25);
+				}
+				&::after {
+					background-color: variable.$grey;
+					top: calc(var(--width) / 2.25);
+				}
+			}
+		}
+
+		&.selected {
+			.lines {
+				background-color: transparent;
+				&::before {
+					top: 0;
+					transform: rotate(-45deg);
+				}
+				&::after {
+					top: 0;
+					transform: rotate(45deg);
+				}
+			}
+		}
+	}
+}
