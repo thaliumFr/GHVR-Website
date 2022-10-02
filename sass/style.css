@@ -464,6 +464,7 @@ section.Mechanics .tool.left > .card {
   background-image: url("/assets/Images/StoryBG.webp");
   background-position: center;
   background-size: cover;
+  background-attachment: fixed;
 }
 .news .flashnews article,
 .news .flashnews p {

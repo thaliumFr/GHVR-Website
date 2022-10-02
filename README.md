@@ -1,4 +1,4 @@
-# Green Hell VR website DEMO
+# Green Hell VR website
 
 Hey i'm thalium, former developper for [GHVR](https://greenhellvr.com/) at Incuvo.
 I'm using for this project 4 languages :
